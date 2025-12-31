@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mondy Bourham - QA Engineer</title>
+    <!-- 🔬 Favicon -->
     <link rel="icon" href="image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>">
     <style>
         * {
@@ -21,7 +22,7 @@
 
         header {
             background: linear-gradient(135deg, rgba(11, 35, 61, 0.95) 0%, rgba(15, 47, 82, 0.95) 100%), 
-                        url('Assets/img/1752589353421 (1).jpg') center/cover;
+                        url('assets/img/1752589353421%20(1).jpg') center/cover;
             color: white;
             padding: 80px 20px;
             text-align: center;
@@ -95,14 +96,19 @@
             top: 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
         }
 
         nav a {
@@ -114,6 +120,21 @@
 
         nav a:hover {
             color: #0B233D;
+        }
+
+        .resume-link {
+            background: #4A9FD8;
+            color: white !important;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .resume-link:hover {
+            background: #0B233D;
+            color: white !important;
         }
 
         .container {
@@ -316,6 +337,11 @@
                 padding: 20px;
             }
 
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
             nav ul {
                 gap: 15px;
             }
@@ -338,7 +364,7 @@
 </head>
 <body>
     <header>
-        <img src="Assets/img/WhatsApp Image 2025-12-31 at 7.20.28 PM.jpeg" alt="Mondy Bourham" class="profile-photo">
+        <img src="assets/img/WhatsApp%20Image%202025-12-31%20at%207.20.28%20PM.jpeg" alt="Mondy Bourham" class="profile-photo">
         <h1>Mondy Ayman Bourham</h1>
         <p>Junior QA Engineer | Manual & Automation Testing</p>
         <div class="contact-links">
@@ -357,6 +383,8 @@
             <li><a href="#experience">Experience</a></li>
             <li><a href="#certifications">Certifications</a></li>
         </ul>
+        <!-- ✅ Resume PDF Button -->
+        <a href="https://drive.google.com/uc?export=download&id=FILE_ID" class="resume-link" target="_blank" download>📄 Resume</a>
     </nav>
 
     <div class="container">
@@ -445,7 +473,8 @@
             <h2>Professional Experience</h2>
             <div class="project-card">
                 <div class="company-header">
-                    <img src="Assets/img/logo@2x.png" alt="California Panther Security" class="company-logo">
+                    <!-- ✅ Updated logo -->
+                    <img src="https://cdn-icons-png.flaticon.com/512/4381/4381770.png" alt="California Panther Security" class="company-logo">
                     <div class="company-info">
                         <h3>Operation Specialist</h3>
                         <div class="company-name"><a href="https://www.californiapanthersecurity.com" target="_blank">California Panther Security</a></div>
@@ -493,7 +522,7 @@
         <section>
             <h2>Education</h2>
             <div class="education-card">
-                <img src="Assets/img/logo.png" alt="El-Shorouk Academy" class="university-logo">
+                <img src="assets/img/logo.png" alt="El-Shorouk Academy" class="university-logo">
                 <div class="education-info">
                     <h3>Bachelor of Computer Science and Information Systems</h3>
                     <div style="color: #0B233D; font-weight: 600; margin-top: 5px;">El-Shorouk Academy</div>
