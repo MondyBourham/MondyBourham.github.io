@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mondy Ayman | QA & Automation Engineer</title>
+  <style>
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+      max-width: 800px; margin: 4rem auto; padding: 0 1.5rem; 
+      background: #fff; color: #1e293b; line-height: 1.6;
+    }
+    [data-theme="dark"] { background: #0f172a; color: #e2e8f0; }
+    .hero { text-align: center; margin-bottom: 3rem; }
+    .hero h1 { font-size: 2.2rem; }
+    .btn { 
+      display: inline-block; padding: 0.6rem 1.4rem; 
+      background: #3b82f6; color: white; text-decoration: none;
+      border-radius: 6px; margin: 0.5rem;
+    }
+    .projects { display: grid; gap: 1.5rem; }
+    .project { border-left: 4px solid #3b82f6; padding-left: 1rem; }
+    .toggle { position: fixed; top: 1rem; right: 1rem; }
+  </style>
+</head>
+<body>
+  <button class="toggle" id="toggle">🌙</button>
+
+  <div class="hero">
+    <h1>Mondy Ayman Ramdan Bourham</h1>
+    <p>🎓 Computer Science Graduate (2024) | 🧪 QA & Automation Engineer</p>
+    <a href="https://www.linkedin.com/in/mondy-bourham" class="btn" target="_blank">LinkedIn</a>
+    <a href="mailto:bourham2018@gmail.com" class="btn">Email</a>
+  </div>
+
+  <h2>Featured Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <h3>🛍️ Swag Labs Automation</h3>
+      <p><strong>Java, Selenium, TestNG, POM, Allure</strong></p>
+      <p>End-to-end automation for e-commerce platform (login → checkout).</p>
+      <a href="https://github.com/MondyBourham/SwagLabs-Automation-Project">GitHub →</a>
+    </div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('toggle');
+    const html = document.documentElement;
+    
+    const isDark = localStorage.theme === 'dark' || 
+                  (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    if (isDark) {
+      html.setAttribute('data-theme', 'dark');
+      toggle.textContent = '☀️';
+    }
+    
+    toggle.addEventListener('click', () => {
+      const dark = html.getAttribute('data-theme') !== 'dark';
+      html.setAttribute('data-theme', dark ? 'dark' : 'light');
+      localStorage.theme = dark ? 'dark' : 'light';
+      toggle.textContent = dark ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
