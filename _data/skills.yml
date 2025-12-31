@@ -1,0 +1,11 @@
+- category: "Testing"
+  items: ["Manual Testing", "API Testing (Postman)", "Regression", "Smoke", "Functional", "Test execution", "Bug Reports"]
+
+- category: "Automation"
+  items: ["Selenium WebDriver", "TestNG", "Page Object Model (POM)", "Allure Reports"]
+
+- category: "Languages"
+  items: ["Java", "Python", "Dart", "C#", "SQL"]
+
+- category: "DevOps & Tools"
+  items: ["Docker", "Jenkins", "GitLab CI/CD", "AWS", "Git/GitHub" ]
