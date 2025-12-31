@@ -19,20 +19,50 @@
         }
 
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%), 
+                        url('Assets/img/1752589353421 (1).jpg') center/cover;
             color: white;
             padding: 80px 20px;
             text-align: center;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+
+        header > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 20px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         header p {
             font-size: 1.2em;
             margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         .contact-links {
@@ -50,6 +80,7 @@
             background: rgba(255,255,255,0.2);
             border-radius: 5px;
             transition: background 0.3s;
+            backdrop-filter: blur(10px);
         }
 
         .contact-links a:hover {
@@ -166,6 +197,46 @@
             margin-bottom: 10px;
         }
 
+        .company-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .company-info {
+            flex: 1;
+        }
+
+        .company-info h3 {
+            margin: 0;
+            color: #667eea;
+        }
+
+        .company-name {
+            color: #764ba2;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .company-name a {
+            color: #764ba2;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .company-name a:hover {
+            color: #667eea;
+            text-decoration: underline;
+        }
+
         .cert-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -180,12 +251,46 @@
             border-radius: 8px;
             text-align: center;
             font-weight: 600;
+            text-decoration: none;
+            display: block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cert-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
         .cert-source {
             font-size: 0.8em;
             opacity: 0.9;
             margin-top: 5px;
+        }
+
+        .education-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .university-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .education-info {
+            flex: 1;
+        }
+
+        .education-info h3 {
+            color: #667eea;
+            margin-bottom: 5px;
         }
 
         footer {
@@ -208,13 +313,24 @@
             nav ul {
                 gap: 15px;
             }
+
+            .company-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .education-card {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
     <header>
+        <img src="Assets/img/profile.jpg" alt="Mondy Bourham" class="profile-photo">
         <h1>Mondy Ayman Bourham</h1>
-        <p>QA Engineer | Manual & Automation Testing Specialist</p>
+        <p>Junior QA Engineer | Manual & Automation Testing</p>
         <div class="contact-links">
             <a href="mailto:bourham2018@gmail.com">📧 Email</a>
             <a href="tel:+201102053959">📱 +201102053959</a>
@@ -321,8 +437,13 @@
         <section id="experience">
             <h2>Professional Experience</h2>
             <div class="project-card">
-                <h3>Operation Specialist</h3>
-                <div style="color: #764ba2; font-weight: 600;">California Panther Security</div>
+                <div class="company-header">
+                    <img src="Assets/img/cps-logo.png" alt="California Panther Security" class="company-logo">
+                    <div class="company-info">
+                        <h3>Operation Specialist</h3>
+                        <div class="company-name"><a href="https://www.californiapanthersecurity.com" target="_blank">California Panther Security</a></div>
+                    </div>
+                </div>
                 <div class="project-date">May 2025 – August 2025 | Remote</div>
                 <p>Handled incoming calls, performed accurate data entry, managed email correspondence, and responded to customer requests, ensuring timely resolution and maintaining high service quality standards.</p>
             </div>
@@ -331,54 +452,57 @@
         <section id="certifications">
             <h2>Certifications</h2>
             <div class="cert-grid">
-                <div class="cert-item">
+                <a href="#" class="cert-item" target="_blank">
                     ISTQB Foundation Level
                     <div class="cert-source">Nezam-Academy</div>
-                </div>
-                <div class="cert-item">
+                </a>
+                <a href="#" class="cert-item" target="_blank">
                     Automation Testing
                     <div class="cert-source">Nezam-Academy</div>
-                </div>
-                <div class="cert-item">
+                </a>
+                <a href="#" class="cert-item" target="_blank">
                     Automation Testing
                     <div class="cert-source">TAU</div>
-                </div>
-                <div class="cert-item">
+                </a>
+                <a href="#" class="cert-item" target="_blank">
                     API Testing
                     <div class="cert-source">Nezam-Academy</div>
-                </div>
-                <div class="cert-item">
+                </a>
+                <a href="#" class="cert-item" target="_blank">
                     Manual Testing
                     <div class="cert-source">QACart</div>
-                </div>
-                <div class="cert-item">
+                </a>
+                <a href="#" class="cert-item" target="_blank">
                     RedHat System Admin
                     <div class="cert-source">RH124</div>
-                </div>
-                <div class="cert-item">
+                </a>
+                <a href="#" class="cert-item" target="_blank">
                     Docker
                     <div class="cert-source">KodeKloud</div>
-                </div>
-                <div class="cert-item">
+                </a>
+                <a href="#" class="cert-item" target="_blank">
                     DevOps Pre-requisites
                     <div class="cert-source">KodeKloud</div>
-                </div>
+                </a>
             </div>
         </section>
 
         <section>
             <h2>Education</h2>
-            <div class="project-card">
-                <h3>Bachelor of Computer Science and Information Systems</h3>
-                <div style="color: #764ba2; font-weight: 600;">El-Shorouk Academy</div>
-                <div class="project-date">Graduated July 2024</div>
+            <div class="education-card">
+                <img src="Assets/img/university-logo.png" alt="El-Shorouk Academy" class="university-logo">
+                <div class="education-info">
+                    <h3>Bachelor of Computer Science and Information Systems</h3>
+                    <div style="color: #764ba2; font-weight: 600; margin-top: 5px;">El-Shorouk Academy</div>
+                    <div class="project-date">Graduated July 2024</div>
+                </div>
             </div>
         </section>
     </div>
 
     <footer>
         <p>&copy; 2025 Mondy Ayman Bourham. All rights reserved.</p>
-        <p>Cairo, Egypt | QA Engineer</p>
+        <p>Cairo, Egypt | Junior QA Engineer</p>
     </footer>
 </body>
 </html>
